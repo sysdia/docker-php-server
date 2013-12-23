@@ -20,8 +20,8 @@ RUN echo "/var/log/msmtp/*.log {\n rotate 12\n monthly\n compress\n missingok\n 
 
 RUN sed -i 's/;sendmail_path\s=.*/sendmail_path = \/usr\/bin\/msmtp -t/' /etc/php5/apache2/php.ini
 
-EXPOSE 22 80
-
 ENV APACHE_RUN_USER www-data
 ENV APACHE_RUN_GROUP www-data
 ENV APACHE_LOG_DIR /var/log/apache2
+
+EXPOSE 80
